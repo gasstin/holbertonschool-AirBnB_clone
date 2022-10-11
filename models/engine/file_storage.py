@@ -2,8 +2,10 @@
 """
     file_storage Module
 """
-from json import dumps, loads
+# from types import SimpleNamespace
+from json import load, dump
 from os.path import exists
+# from models.base_model import BaseModel
 
 
 
@@ -26,26 +28,27 @@ class FileStorage:
         """
             sets in __objects the obj with key <obj class name>.id
         """
-        FileStorage.__objects['{obj.__class__.__name__}.{obj.id}'] = obj
+        key_aux = str(obj.__class__.__name__) + "." + str(obj.id)
+        self.__objects[key_aux] = obj
 
     def save(self):
         """
             serializes __objects to the JSON file
         """
         dic_aux = {}
-        for key, value in self.__objects.items():
+        for key, value in self.all().items():
             dic_aux[key] = value.to_dict()
         with open(self.__file_path, "w", encoding="utf-8") as json_file:
-            json_file.write(dumps(dic_aux))
+            dump(dic_aux, json_file)
         
-        # with open(self.__file_path, "w", encoding="utf-8") as json_file:
-        #     json_file.write(dumps(self.__objects))
-
-
     def reload(self):
         """
             deserializes the JSON file to __objects
         """
         if exists(self.__file_path):
             with open(self.__file_path, "r") as json_file:
-                self.__objects.update(loads(json_file.read()))
+                data = load(json_file)
+            for val in data.values():
+                from models.base_model import BaseModel
+                self.new(BaseModel(**val))
+            
