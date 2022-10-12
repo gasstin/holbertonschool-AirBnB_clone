@@ -48,9 +48,9 @@ class FileStorage:
             for val in data.values():
                 from models.base_model import BaseModel
                 from models.user import User
-                list_auxiliar = [BaseModel, User]
-                for l_aux in list_auxiliar:
-                    self.new(l_aux(**val))
-                # if val['__class__'] == 'BaseModel':
-                # if val['__class__'] == 'User':
-                    # self.new(User(**val))
+                # list_auxiliar = [BaseModel, User]
+                # for l_aux in list_auxiliar:
+                if val['__class__'] == 'BaseModel':
+                    self.new(BaseModel(**val))
+                if val['__class__'] == 'User':
+                    self.new(User(**val))

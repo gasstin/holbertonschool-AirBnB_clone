@@ -36,6 +36,4 @@ class TestBaseModel(unittest.TestCase):
         print(my_model)
     
     def test_to_dict(self):
-        my_model = BaseModel()
-        aux_dic = my_model.to_dict()
-        print(aux_dic)
+        BaseModel().to_dict()
