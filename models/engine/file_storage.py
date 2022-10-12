@@ -2,16 +2,14 @@
 """
     file_storage Module
 """
-from datetime import datetime
 from json import load, dump
 from os.path import exists
-
 
 
 class FileStorage:
     """
         Write a class FileStorage that serializes instances
-        to a JSON file and deserializes JSON file to instances 
+        to a JSON file and deserializes JSON file to instances
     """
 
     __file_path = 'file.json'
@@ -29,7 +27,7 @@ class FileStorage:
         """
         key_aux = str(obj.__class__.__name__) + "." + str(obj.id)
         self.__objects[key_aux] = obj
-        
+
     def save(self):
         """
             serializes __objects to the JSON file
@@ -39,7 +37,7 @@ class FileStorage:
             dic_aux[key] = value.to_dict()
         with open(self.__file_path, "w", encoding="utf-8") as json_file:
             dump(dic_aux, json_file)
-        
+
     def reload(self):
         """
             deserializes the JSON file to __objects
@@ -51,10 +49,8 @@ class FileStorage:
                 from models.base_model import BaseModel
                 from models.user import User
                 list_auxiliar = [BaseModel, User]
-                for l in list_auxiliar:
-                    self.new(l(**val))
+                for l_aux in list_auxiliar:
+                    self.new(l_aux(**val))
                 # if val['__class__'] == 'BaseModel':
                 # if val['__class__'] == 'User':
                     # self.new(User(**val))
-
-            

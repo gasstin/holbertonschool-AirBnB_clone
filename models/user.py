@@ -4,9 +4,15 @@
 """
 from models.base_model import BaseModel
 
+
 class User(BaseModel):
     """
         Create a user
+
+        email: string
+        password: string
+        first_name: string
+        last_name: string
     """
     email = ""
     password = ""

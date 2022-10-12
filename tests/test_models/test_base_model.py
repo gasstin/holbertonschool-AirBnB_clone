@@ -16,7 +16,8 @@ class TestBaseModel(unittest.TestCase):
         
     def test_created(self):
         my_model = BaseModel()
-        self.assertTrue(type(my_model.created_at), datetime)
+        my_model.created_at = '2022-10-11'
+        self.assertEqual(str(my_model.created_at), '2022-10-11')
     
     def test_update(self):
         my_model = BaseModel()
@@ -28,3 +29,8 @@ class TestBaseModel(unittest.TestCase):
         my_model = BaseModel()
         my_model.id = 20
         self.assertEqual(str(my_model.id), "20")
+    
+    def test_to_dict(self):
+        my_model = BaseModel()
+        aux_dic = my_model.to_dict()
+        self.assertTrue(type(aux_dic), dict)
