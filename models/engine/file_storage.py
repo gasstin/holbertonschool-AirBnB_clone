@@ -49,5 +49,12 @@ class FileStorage:
                 data = load(json_file)
             for val in data.values():
                 from models.base_model import BaseModel
-                self.new(BaseModel(**val))
+                from models.user import User
+                list_auxiliar = [BaseModel, User]
+                for l in list_auxiliar:
+                    self.new(l(**val))
+                # if val['__class__'] == 'BaseModel':
+                # if val['__class__'] == 'User':
+                    # self.new(User(**val))
+
             
