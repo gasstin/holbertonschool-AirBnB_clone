@@ -2,10 +2,9 @@
 """
     file_storage Module
 """
-# from types import SimpleNamespace
+from datetime import datetime
 from json import load, dump
 from os.path import exists
-# from models.base_model import BaseModel
 
 
 
@@ -30,7 +29,7 @@ class FileStorage:
         """
         key_aux = str(obj.__class__.__name__) + "." + str(obj.id)
         self.__objects[key_aux] = obj
-
+        
     def save(self):
         """
             serializes __objects to the JSON file

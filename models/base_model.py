@@ -5,8 +5,6 @@
 """
 from uuid import uuid4
 from datetime import datetime
-# from typing import TYPE_CHECKING
-# if TYPE_CHECKING:
 from models import storage
 
 
@@ -49,13 +47,14 @@ class BaseModel:
             updated_at with the current datetime
         """
         self.updated_at = datetime.now()
+        storage.save()
 
     def to_dict(self):
         """
             returns a dictionary containing all
             keys/values of __dict__ of the instance
         """
-        dict_aux = self.__dict__
+        dict_aux = self.__dict__.copy()
         dict_aux['__class__'] = self.__class__.__name__
         dict_aux['created_at'] = self.created_at.isoformat()
         dict_aux['updated_at'] = self.updated_at.isoformat()
