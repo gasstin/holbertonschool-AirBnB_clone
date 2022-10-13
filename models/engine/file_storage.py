@@ -51,9 +51,7 @@ class FileStorage:
                 from models.city import City
                 from models.state import State
                 from models.review import Review
-                # list_auxiliar = [BaseModel, User, City, State, Review]
-                # for l_aux in list_auxiliar:
-                if val['__class__'] == 'BaseModel':
-                    self.new(BaseModel(**val))
-                if val['__class__'] == 'User':
-                    self.new(User(**val))
+                dict_class = {'BaseModel': BaseModel,
+                              'User': User, 'City': City,
+                              'State': State, 'Review': Review}
+                self.new(dict_class[val['__class__']](**val))
