@@ -99,26 +99,28 @@ class HBNBCommand(cmd.Cmd):
     def do_update(self, arg):
         'Updates an instance based on the class name and id by adding or updating attribute (save the change into the JSON file). (hbnb) update BaseModel 124d4-1l2s34-12xx3a4 email "aibnb@mail.com"'
         arguments = arg.split()
-        if len(arguments) < 1:
-            print("** class name missing **")
-        if len(arguments) >= 1:
-            if arguments[0] not in dict_class:
-                print("** class doesn't exist **")
-            elif arguments[0] in dict_class and len(arguments) == 1:
-                print("** instance id missing **")
-        if len(arguments) >= 2:
-            if f"{arguments[0]}.{arguments[1]}" not in storage.all().keys():
-                print("** no instance found **")
-            elif (f"{arguments[0]}.{arguments[1]}" in storage.all().keys()) and len(arguments) == 2:
-                print("** attribute name missing **")
-        if len(arguments) == 3:
-            print("** value missing **")
-        else:
-            try:
-                setattr(storage.all()[f"{arguments[0]}.{arguments[1]}"], arguments[2], arguments[3][1:len(arguments[3]) - 1])
-                storage.save()
-            except Exception:
-                print("no se pudo")
+        try:
+            setattr(storage.all()[f"{arguments[0]}.{arguments[1]}"], arguments[2], arguments[3][1:len(arguments[3]) - 1])
+            storage.save()
+        except Exception:
+            if len(arguments) < 1:
+                print("** class name missing **")
+            if len(arguments) >= 1:
+                if arguments[0] not in dict_class:
+                    print("** class doesn't exist **")
+                    return False
+                elif arguments[0] in dict_class and len(arguments) == 1:
+                    print("** instance id missing **")
+                    return False
+            if len(arguments) >= 2:
+                if f"{arguments[0]}.{arguments[1]}" not in storage.all().keys():
+                    print("** no instance found **")
+                    return False
+                elif (f"{arguments[0]}.{arguments[1]}" in storage.all().keys()) and len(arguments) == 2:
+                    print("** attribute name missing **")
+                    return False
+            if len(arguments) == 3:
+                print("** value missing **")
 
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
