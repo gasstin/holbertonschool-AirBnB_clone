@@ -25,8 +25,8 @@ class FileStorage:
         """
             sets in __objects the obj with key <obj class name>.id
         """
-        key_aux = str(obj.__class__.__name__) + "." + str(obj.id)
-        self.__objects[key_aux] = obj
+        self.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
+        self.all()
 
     def save(self):
         """
@@ -48,7 +48,10 @@ class FileStorage:
             for val in data.values():
                 from models.base_model import BaseModel
                 from models.user import User
-                # list_auxiliar = [BaseModel, User]
+                from models.city import City
+                from models.state import State
+                from models.review import Review
+                # list_auxiliar = [BaseModel, User, City, State, Review]
                 # for l_aux in list_auxiliar:
                 if val['__class__'] == 'BaseModel':
                     self.new(BaseModel(**val))
