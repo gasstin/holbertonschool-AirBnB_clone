@@ -90,7 +90,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         if n >= 1:
             if arguments[0] not in dict_class:
-            # check if the objects is in storage  
+                # check if the objects is in storage
                 print("** class doesn't exist **")
                 return False
             elif n < 2:

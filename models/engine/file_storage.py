@@ -27,6 +27,7 @@ class FileStorage:
         """
         self.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
         self.all()
+        return 0
 
     def save(self):
         """
@@ -38,6 +39,7 @@ class FileStorage:
         # open the json file and serializes dic_aux using json.dump
         with open(self.__file_path, "w", encoding="utf-8") as json_file:
             dump(dic_aux, json_file)
+        return 0
 
     def reload(self):
         """
@@ -63,3 +65,4 @@ class FileStorage:
                               'Amenity': Amenity, 'Place': Place}
                 # pass to new method all additional named arguments
                 self.new(dict_class[val['__class__']](**val))
+        return 0

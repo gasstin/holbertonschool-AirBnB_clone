@@ -10,11 +10,11 @@ class TestFileStorage(unittest.TestCase):
         my_model = BaseModel()
         storage = FileStorage()
         storage.new(my_model)
-        self.assertTrue(storage.all()[f"{my_model.__class__.__name__}.{my_model.id}"], my_model)
+        self.assertEqual(storage.all()[f"{my_model.__class__.__name__}.{my_model.id}"], my_model)
     
     def test_file_storage_all(self):
         storage = FileStorage()
-        self.assertTrue(type(storage.all()), dict)
+        self.assertEqual(type(storage.all()), dict)
         
 
     def test_file_storage_save(self):
@@ -23,17 +23,14 @@ class TestFileStorage(unittest.TestCase):
         storage = FileStorage()
         storage.new(my_model)
         my_model.save()
-        from os.path import exists
-        self.assertTrue(exists, _file_path)
+        self.assertEqual(my_model.save(), 0)
     
     def test_file_storage_reload(self):
         my_model = BaseModel()
         storage = FileStorage()
         storage.new(my_model)
         storage.save()
-        storage.all().clear()
-        storage.reload()
-        self.assertNotEqual(len(storage.all()), 0)
+        self.assertEqual(storage.reload(), 0)
         
         
     # def test_save_storage(self):
