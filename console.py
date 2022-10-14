@@ -20,6 +20,9 @@ dict_class = {'BaseModel': BaseModel, 'User': User,
 
 
 class HBNBCommand(cmd.Cmd):
+    """
+        Cmd class
+    """
     prompt = '(hbnb) '
 
     def emptyline(self):
@@ -42,14 +45,14 @@ class HBNBCommand(cmd.Cmd):
             Creates a new instance, saves it (to the JSON file)
             and prints the id. Example: (hbnb) create User
         """
-        arguments = line.split()
+        arguments = line.split()  # split the input line in a list
         if len(arguments) < 1:
             print("** class name missing **")
         else:
             try:
                 if arguments[0] in dict_class:
                     c = dict_class[arguments[0]]()
-                c.save()
+                c.save()  # saves it (to the JSON file)
                 print(c.id)
             except Exception:
                 print("** class doesn't exist **")
@@ -127,10 +130,12 @@ class HBNBCommand(cmd.Cmd):
         """
         arguments = arg.split()
         try:
+            # try to set attributes
             setattr(storage.all()[f"{arguments[0]}.{arguments[1]}"],
                     arguments[2], arguments[3][1:len(arguments[3]) - 1])
-            storage.save()
+            storage.save()  # saves it (to the JSON file)
         except Exception:
+            # Manage the possibles error casses
             if len(arguments) < 1:
                 print("** class name missing **")
             if len(arguments) >= 1:
