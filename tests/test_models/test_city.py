@@ -8,5 +8,5 @@ class TestBaseModel(unittest.TestCase):
     
     def test_city(self):
         city = City()
-        self.assertTrue(type(city.name), str)
+        self.assertEqual(type(city.name), str)
     
