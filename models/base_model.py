@@ -58,10 +58,10 @@ class BaseModel:
             returns a dictionary containing all
             keys/values of __dict__ of the instance
         """
-        # save a copy of self__dict__ because we dont wanna modify
+        # save a copy of self.__dict__ because we don't wanna modify
         dict_aux = self.__dict__.copy()
         dict_aux['__class__'] = self.__class__.__name__
-        # isoformat return a date with the next format: Date, Time, UTC
+        # isoformat return a string with the next format: Date, Time, UTC
         dict_aux['created_at'] = self.created_at.isoformat()
         dict_aux['updated_at'] = self.updated_at.isoformat()
         return dict_aux

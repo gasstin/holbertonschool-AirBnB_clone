@@ -90,6 +90,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class name missing **")
         if n >= 1:
             if arguments[0] not in dict_class:
+            # check if the objects is in storage  
                 print("** class doesn't exist **")
                 return False
             elif n < 2:
@@ -148,6 +149,7 @@ class HBNBCommand(cmd.Cmd):
             if len(arguments) >= 2:
                 if f"{arguments[0]}.{arguments[1]}" not in\
                         storage.all().keys():
+                    # check if the objects is in storage
                     print("** no instance found **")
                     return False
                 elif (f"{arguments[0]}.{arguments[1]}" in
