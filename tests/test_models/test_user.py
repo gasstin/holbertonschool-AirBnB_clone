@@ -7,14 +7,14 @@ class TestBaseModel(unittest.TestCase):
     
     def test_user_first_name(self):
         user = User()
-        user.first_name = "Francisco"
-        self.assertEqual(user.first_name, "Francisco")
+        # user.first_name = "Francisco"
+        self.assertEqual(type(user.first_name), str)
     
     
     def test_user_last_name(self):
         user = User()
-        user.last_name = "Suarez"
-        self.assertEqual(user.last_name, "Suarez")
+        # user.last_name = "Suarez"
+        self.assertEqual(type(user.last_name), str)
         
     
     def test_user_first_email(self):
