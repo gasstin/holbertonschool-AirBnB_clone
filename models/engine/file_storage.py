@@ -51,7 +51,10 @@ class FileStorage:
                 from models.city import City
                 from models.state import State
                 from models.review import Review
+                from models.amenity import Amenity
+                from models.place import Place
                 dict_class = {'BaseModel': BaseModel,
                               'User': User, 'City': City,
-                              'State': State, 'Review': Review}
+                              'State': State, 'Review': Review,
+                              'Amenity': Amenity, 'Place': Place}
                 self.new(dict_class[val['__class__']](**val))
