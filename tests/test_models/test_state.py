@@ -8,4 +8,4 @@ class TestBaseModel(unittest.TestCase):
     
     def test_state(self):
         state = State()
-        self.assertTrue(isinstance(state, BaseModel))
+        self.assertTrue(type(state.name), str)

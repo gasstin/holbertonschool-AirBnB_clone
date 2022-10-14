@@ -15,9 +15,9 @@ class TestBaseModel(unittest.TestCase):
     
     def test_user_email(self):
         user = User()
-        self.assertTrue(hasattr(user, 'email'))
+        self.assertTrue(type(user.email), str)
     
     def test_user_password(self):
         user = User()
-        self.assertTrue(hasattr(user, 'password'))
+        self.assertTrue(type(user.password), str)
     
