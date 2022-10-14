@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 import unittest
-from models.base_model import BaseModel
 from models.state import State
 
 

@@ -1,24 +1,10 @@
 #!/usr/bin/python3
 import unittest
-from models.user import User
+from models.amenity import Amenity
 
 
-class TestBaseModel(unittest.TestCase):
+class TestBaseModel_Amenity(unittest.TestCase):
     
-    def test_user_first_name(self):
-        user = User()
-        self.assertEqual(type(user.first_name), str)
-    
-    def test_user_last_name(self):
-        user = User()
-        self.assertEqual(type(user.last_name), str)
-    
-    def test_user_email(self):
-        user = User()
-        self.assertEqual(type(user.email), str)
-    
-    def test_user_password(self):
-        user = User()
-        # user.password = "contraseña"
-        self.assertEqual(type(user.password), str)
-    
+    def test_amenity_name(self):
+        amenity = Amenity()
+        self.assertEqual(type(amenity.name), str)    
