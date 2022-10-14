@@ -7,23 +7,17 @@ class TestBaseModel(unittest.TestCase):
     
     def test_user_first_name(self):
         user = User()
-        # user.first_name = "Francisco"
         self.assertEqual(type(user.first_name), str)
-    
     
     def test_user_last_name(self):
         user = User()
-        # user.last_name = "Suarez"
         self.assertEqual(type(user.last_name), str)
-        
     
-    def test_user_first_email(self):
+    def test_user_email(self):
         user = User()
-        user.email = "FranciscoSuarez@holberton.com"
-        self.assertEqual(user.email, "FranciscoSuarez@holberton.com")
+        self.assertTrue(hasattr(user, 'email'))
     
-    def test_user_first_email(self):
+    def test_user_password(self):
         user = User()
-        user.password = "contraseña"
-        self.assertEqual(user.password, "contraseña")
+        self.assertTrue(hasattr(user, 'password'))
     
