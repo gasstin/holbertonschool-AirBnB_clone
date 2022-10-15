@@ -41,4 +41,15 @@ class TestBaseModel(unittest.TestCase):
 
     def test_to_dict(self):
         my_model = BaseModel()
-        self.assertEqual(type(my_model.to_dict()), dict)
+        dict_aux = my_model.to_dict()
+        self.assertIsInstance(my_model.to_dict(), dict)
+        self.assertEqual(my_model.id, dict_aux["id"])
+
+    def test_save(self):
+        my_model = BaseModel()
+        storage = FileStorage()
+        storage.all().clear()
+        my_model.my_number = 10
+        print(type(my_model.created_at))
+        my_model.save()
+        self.assertEqual(my_model.my_number, 10)
