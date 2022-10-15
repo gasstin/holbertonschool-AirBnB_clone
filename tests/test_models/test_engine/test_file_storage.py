@@ -25,10 +25,11 @@ class TestFileStorage(unittest.TestCase):
         # storage.new(my_model)
         # my_model.save()
         # self.assertEqual(my_model.save(), 0)
-        my_model = BaseModel()
         storage = FileStorage()
+        storage.all().clear()
+        my_model = BaseModel()
         storage.save()
-        self.assertEqual(my_model.save(), 0)
+        self.assertNotEqual(storage.all(), 0)
 
     def test_file_storage_reload(self):
         # my_model = BaseModel()
@@ -37,5 +38,6 @@ class TestFileStorage(unittest.TestCase):
         # storage.save()
         # self.assertEqual(storage.reload(), 0)
         storage = FileStorage()
+        storage.all().clear()
         storage.reload()
         self.assertNotEqual(storage.all(), 0)
