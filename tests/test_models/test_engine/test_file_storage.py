@@ -19,12 +19,6 @@ class TestFileStorage(unittest.TestCase):
         self.assertEqual(type(storage.all()), dict)
 
     def test_file_storage_save(self):
-        # _file_path = "file.json"
-        # my_model = BaseModel()
-        # storage = FileStorage()
-        # storage.new(my_model)
-        # my_model.save()
-        # self.assertEqual(my_model.save(), 0)
         storage = FileStorage()
         storage.all().clear()
         my_model = BaseModel()
@@ -32,11 +26,6 @@ class TestFileStorage(unittest.TestCase):
         self.assertNotEqual(len(storage.all()), 0)
 
     def test_file_storage_reload(self):
-        # my_model = BaseModel()
-        # storage = FileStorage()
-        # storage.new(my_model)
-        # storage.save()
-        # self.assertEqual(storage.reload(), 0)
         storage = FileStorage()
         storage.all().clear()
         storage.reload()
