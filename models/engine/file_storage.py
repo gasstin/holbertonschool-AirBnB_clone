@@ -26,8 +26,6 @@ class FileStorage:
             sets in __objects the obj with key <obj class name>.id
         """
         self.__objects[f"{obj.__class__.__name__}.{obj.id}"] = obj
-        self.all()
-        return 0
 
     def save(self):
         """
@@ -36,15 +34,15 @@ class FileStorage:
         dic_aux = {}
         for key, value in self.all().items():
             dic_aux[key] = value.to_dict()
-        # open the json file and serializes dic_aux using json.dump
+            # open the json file and serializes dic_aux using json.dump
         with open(self.__file_path, "w", encoding="utf-8") as json_file:
             dump(dic_aux, json_file)
-        return 0
 
     def reload(self):
         """
             deserializes the JSON file to __objects
         """
+        self.__objects.clear()
         if exists(self.__file_path):  # check if the file exists
             with open(self.__file_path, "r") as json_file:  # open the file
                 # use json.load to convert in a dictionary and deserialize file

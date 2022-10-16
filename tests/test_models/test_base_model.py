@@ -1,12 +1,10 @@
 #!/usr/bin/python3
-import datetime
-import imp
+
 from time import sleep
 import unittest
-import io
-import contextlib
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
+import os
 
 
 class TestBaseModel(unittest.TestCase):
@@ -50,6 +48,10 @@ class TestBaseModel(unittest.TestCase):
         storage = FileStorage()
         storage.all().clear()
         my_model = BaseModel()
-        time_aux = my_model.created_at
+        try:
+            os.remove("file.json")
+        except Exception:
+            pass
         my_model.save()
-        self.assertNotEqual(my_model.updated_at, time_aux)
+        self.assertTrue(os.path.exists("file.json"))
+        # self.assertNotEqual(my_model.updated_at, time_aux)
