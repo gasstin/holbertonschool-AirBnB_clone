@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 import datetime
 import imp
+from time import sleep
 import unittest
 import io
 import contextlib
@@ -49,8 +50,6 @@ class TestBaseModel(unittest.TestCase):
         storage = FileStorage()
         storage.all().clear()
         my_model = BaseModel()
-        my_model.my_number = 10
+        time_aux = my_model.created_at
         my_model.save()
-        self.assertEqual(my_model.my_number, 10)
-        # self.assertTrue(isinstance(my_model.created_at, datetime))
-        self.assertEqual(my_model.__class__.__name__, "BaseModel")
+        self.assertNotEqual(my_model.updated_at, time_aux)
