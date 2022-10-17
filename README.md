@@ -1,6 +1,16 @@
 <h1 align="center">Airbnb Clone</h1>
 <img src="https://user-images.githubusercontent.com/105363918/196176491-6fd1077d-6d2a-446c-9a6b-04cbae6f448f.png">
-<h2>Description</h2>
+
+#### Table of Contents
+- [Description](#Description)
+- [Files and short description about them](#Files)
+- [Examples](#Examples)
+- [Tests](#Tests)
+- [Links to Resources](#Links)
+- [Authors](#Authors)
+
+
+<h2> <a name="Description"></a>Description</h2>
 
 This is the first step towards building the AirBnB clone and it's very important because it will be the basis for the following.<br>
 <br>
@@ -12,7 +22,7 @@ Create the first abstracted storage engine of the project: File storage. There a
 <br>
 
 
-<h2>Files and short description about them</h2>
+<h2><a name="Files"></a>Files and short description about them</h2>
 
 - <b>/models/base_model.py</b>:  contains the parent class (BaseModel)
 - <b>/models/engine/file_storage.py</b>:  contains the methods to serializate and deserializate a JSON file (class FileStorage)
@@ -28,7 +38,7 @@ Create the first abstracted storage engine of the project: File storage. There a
 - <b>AUTHORS</b>: contributors
 
 
-<h2>Usage</h2>
+<h2><a name="Usage"></a>Usage</h2>
 Before starting, it's necessary to have installed python3 (version 3.8.5) locally <br>
 <h3>Clone this repo:</h3>
 
@@ -36,7 +46,7 @@ Before starting, it's necessary to have installed python3 (version 3.8.5) locall
 
 Make sure that the execution permissions are enabled. Now you should be able to execute the console and see the next prompt `(hbnb)`<br>
 <br>
-<h3>Commands and usage examples</h3>
+<h3><a name="commands examples"></a>Commands and usage examples</h3>
 
 - `help` will show the available commands and if you run help followed by the name of a command will display a short description of what that command does.
 - `quit` and `EOF` to exit the program.
@@ -62,7 +72,7 @@ Make sure that the execution permissions are enabled. Now you should be able to 
       
 
 
-<h2>Examples</h2>
+<h2><a name="Examples"></a>Examples</h2>
 
       
      root@f576c3df40fe:/holbertonschool-AirBnB_clone# ./console.py
@@ -105,7 +115,7 @@ Make sure that the execution permissions are enabled. Now you should be able to 
     (hbnb) quit
     root@f576c3df40fe:/holbertonschool-AirBnB_clone#
 
-<h2>Tests</h2>
+<h2><a name="Tests"></a>Tests</h2>
 Our packages and modules were tested with <b>unittest</b> as can you see below:
 
       ~/holbertonschool-AirBnB_clone$python3 -m unittest discover tests -v
@@ -135,7 +145,7 @@ Our packages and modules were tested with <b>unittest</b> as can you see below:
       OK      
 with the objetive to see the correct performance of the files. For more information about the tests, go in 'tests' folder.
 
-<h2>Links to Resources</h2>
+<h2><a name="Links"></a>Links to Resources</h2>
 
 - [cmd module](https://docs.python.org/3.4/library/cmd.html)
 - [uuid module](https://docs.python.org/3.4/library/uuid.html)
@@ -144,7 +154,7 @@ with the objetive to see the correct performance of the files. For more informat
 - [args/kwargs](https://yasoob.me/2013/08/04/args-and-kwargs-in-python-explained/)
 - [Python test cheatsheet](https://www.pythonsheets.com/notes/python-tests.html)
 
-<h2>Authors</h2>
+<h2><a name="Authors"></a>Authors</h2>
 
 - Gastón Larroque     - [gasstin](https://github.com/gasstin)
 - Ignacio Capezzolo   - [NachoCape](https://github.com/NachoCape)
