@@ -1,5 +1,5 @@
 <h1 align="center">Airbnb Clone</h1>
-
+<img src="https://user-images.githubusercontent.com/105363918/196176491-6fd1077d-6d2a-446c-9a6b-04cbae6f448f.png">
 <h2>Description</h2>
 
 This is the first step towards building the AirBnB clone and it's very important because it will be the basis for the following.<br>
@@ -14,18 +14,18 @@ Create the first abstracted storage engine of the project: File storage. There a
 
 <h2>Files and short description about them</h2>
 
-- /models/base_model.py:  contains the parent class (BaseModel)
-- /models/engine/file_storage.py:  contains the methods to serializate and deserializate a JSON file (class FileStorage)
-- /models/user.py:	class User that inherits from BaseModel
-- /models/state.py:  class State inherits from BaseModel
-- /models/city.py:	class City inherits from BaseModel
-- /models/amenity.py:  class Amenity inherits from BaseModel
-- /models/place.py:  class Place inherits from BaseModel
-- /models/review.py: 	class Review inherits from BaseModel
-- /tests:  directory containing all the unittest
-- console.py:	Conmmand interpeter
-- README.md:	readme file
-- AUTHORS: contributors
+- <b>/models/base_model.py</b>:  contains the parent class (BaseModel)
+- <b>/models/engine/file_storage.py</b>:  contains the methods to serializate and deserializate a JSON file (class FileStorage)
+- <b>/models/user.py</b>:	class User that inherits from BaseModel
+- <b>/models/state.py</b>:  class State inherits from BaseModel
+- <b>/models/city.py</b>:	class City inherits from BaseModel
+- <b>/models/amenity.py</b>:  class Amenity inherits from BaseModel
+- <b>/models/place.py</b>:  class Place inherits from BaseModel
+- <b>/models/review.py</b>: 	class Review inherits from BaseModel
+- <b>/tests</b>:  directory containing all the unittest
+- <b>console.py</b>:	Conmmand interpeter
+- <b>README.md</b>:	readme file
+- <b>AUTHORS</b>: contributors
 
 
 <h2>Usage</h2>
