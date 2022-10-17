@@ -3,6 +3,7 @@
     This module contains the entry point of the command interpreter
 """
 import cmd
+from pydoc import classname
 from models.base_model import BaseModel
 from models.user import User
 from models.city import City
@@ -107,14 +108,13 @@ class HBNBCommand(cmd.Cmd):
             Prints all string representation of all instances based or
             not on the class name. Example: (hbnb) all User or (hbnb) all
         """
+        list_obj = []
         if not line:  # if not arguments
-            list_obj = []
             for val in storage.all().values():
                 list_obj += [f"{str(val)}"]
             print(f"{list_obj}")
         else:
             if line in dict_class:
-                list_obj = []
                 for key, val in storage.all().items():
                     if key[0:len(line)] == line:
                         # compares the arguments with the keys
@@ -158,6 +158,31 @@ class HBNBCommand(cmd.Cmd):
                     return False
             if len(arguments) == 3:
                 print("** value missing **")
+
+    def default(self, line):
+        arguments = line.split('.')
+        if arguments[1][:-2] == 'all':
+            self.do_all(arguments[0])
+        if arguments[1][:-2] == 'count':
+            counter = 0
+            if arguments[0] in dict_class:
+                for key, val in storage.all().items():
+                    if key[0:len(arguments[0])] == arguments[0]:
+                        # compares the arguments with the keys
+                        counter += 1
+            # else:
+            #     print("** class doesn't exist **")
+            print(counter)
+        if arguments[1][0:4] == 'show':
+            string_for_show = ""
+            arguments_for_show = arguments[1].split('(')
+            string_for_show += arguments[0] + " " + arguments_for_show[1][1:-2]
+            self.do_show(string_for_show)
+        if arguments[1][0:7] == 'destroy':
+            string_for_destroy = ""
+            arg_for_destroy = arguments[1].split('(')
+            string_for_destroy += arguments[0] + " " + arg_for_destroy[1][1:-2]
+            self.do_destroy(string_for_destroy)
 
 
 if __name__ == '__main__':

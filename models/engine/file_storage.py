@@ -63,4 +63,3 @@ class FileStorage:
                               'Amenity': Amenity, 'Place': Place}
                 # pass to new method all additional named arguments
                 self.new(dict_class[val['__class__']](**val))
-        return 0

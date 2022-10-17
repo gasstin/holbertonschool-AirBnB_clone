@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-from imp import reload
 import unittest
 from models.base_model import BaseModel
 from models.engine.file_storage import FileStorage
