@@ -29,7 +29,7 @@ Create the first abstracted storage engine of the project: File storage. There a
 
 
 <h2>Usage</h2>
-
+Before starting, it's necessary to have installed python3 (version 3.8.5) locally <br>
 <h3>Clone this repo:</h3>
 
 `https://github.com/gasstin/holbertonschool-AirBnB_clone.git`
@@ -104,9 +104,37 @@ Make sure that the execution permissions are enabled. Now you should be able to 
     
     (hbnb) quit
     root@f576c3df40fe:/holbertonschool-AirBnB_clone#
-      
-      
-      
+
+<h2>Tests</h2>
+Our packages and modules were tested with <b>unittest</b> as can you see below:
+
+      ~/holbertonschool-AirBnB_clone$python3 -m unittest discover tests -v
+      test_amenity_name (test_models.test_amenity.TestBaseModel_Amenity) ... ok
+      test_created (test_models.test_base_model.TestBaseModel) ... ok
+      test_id (test_models.test_base_model.TestBaseModel) ... ok
+      test_save (test_models.test_base_model.TestBaseModel) ... ok
+      test_str (test_models.test_base_model.TestBaseModel) ... ok
+      test_to_dict (test_models.test_base_model.TestBaseModel) ... ok
+      test_update (test_models.test_base_model.TestBaseModel) ... ok
+      test_city (test_models.test_city.TestBaseModel) ... ok
+      test_file_storage_all (test_models.test_engine.test_file_storage.TestFileStorage) ... ok
+      test_file_storage_new (test_models.test_engine.test_file_storage.TestFileStorage) ... ok
+      test_file_storage_reload (test_models.test_engine.test_file_storage.TestFileStorage) ... ok
+      test_file_storage_save (test_models.test_engine.test_file_storage.TestFileStorage) ... ok
+      test_place_name (test_models.test_place.TestBaseModel_Place) ... ok
+      test_review_text (test_models.test_review.TestBaseModel) ... ok
+      test_state (test_models.test_state.TestBaseModel) ... ok
+      test_user_email (test_models.test_user.TestBaseModel) ... ok
+      test_user_first_name (test_models.test_user.TestBaseModel) ... ok
+      test_user_last_name (test_models.test_user.TestBaseModel) ... ok
+      test_user_password (test_models.test_user.TestBaseModel) ... ok
+
+      ----------------------------------------------------------------------
+      Ran 19 tests in 0.021s
+
+      OK      
+with the objetive to see the correct performance of the files. For more information about the tests, go in 'tests' folder.
+
 <h2>Links to Resources</h2>
 
 - [cmd module](https://docs.python.org/3.4/library/cmd.html)
