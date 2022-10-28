@@ -1,7 +1,7 @@
 .filters {
+    position: relative;
     display: flex;
-    text-align: left;
-    align-items: center;
+    align-content: center;
     height: 70px;
     width: 100%;
     border-radius: 4px;
@@ -19,9 +19,6 @@ button {
     border: 0;
     border-radius: 4px;
     margin: auto 30px auto auto;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
 }
 
 button:hover{
@@ -34,20 +31,20 @@ button:hover{
     border-right-color: #DDDDDD;
     border-right-style: solid;
     border-right-width: 1px;
-    margin: auto;
 }
 
 .amenities {
     height: 100%;
     width: 25%;
-    margin: auto;
 }
 
 h3 {
     font-weight: 600;
+    margin: 5% 0 5% 15%;
 }
 
 h4 {
     font-weight: 400;
     font-size: 14px;
+    margin: -2.5% auto auto 15%;
 }
