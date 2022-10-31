@@ -33,7 +33,7 @@ button:hover{
     border-right-width: 1px;
 }
 
-.amenities {
+.amenities_filters {
     height: 100%;
     width: 25%;
 }
@@ -52,11 +52,11 @@ ul.popover {
     padding-bottom: 20%;
 }
 
-.locations:hover ul.popover, .amenities:hover ul.popover  {
+.locations:hover ul.popover, .amenities_filters:hover ul.popover  {
     display: block;
 }
 
-.locations ul.popover li, .amenities ul.popover li {
+.locations ul.popover li, .amenities_filters ul.popover li {
     display: block;
 }
 
