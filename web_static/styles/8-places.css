@@ -68,11 +68,10 @@
     background-position-y: top;
     background-origin: border-box;
     position: relative;
-    top: 70px;
+    top: 15px;
     width: 100px;
     height: 100px;
     flex-grow: 2;
-    text-align: center;
 }
 
 .number_rooms {
@@ -81,11 +80,10 @@
     background-position-x: center;
     background-position-y: top;
     position: relative;
-    top: 70px;
+    top: 15px;
     height: 100px;
     width: 100px;
     flex-grow: 2;
-    text-align: center;
 }
 
 .number_bathrooms {
@@ -94,10 +92,36 @@
     background-position-x: center;
     background-position-y: top;
     position: relative;
-    top: 70px;
+    top: 15px;
     height: 100px;
     width: 100px;
     flex-grow: 2;
+}
+
+.max_guest p {
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    height: 20px;
+    width: 100px;
+    text-align: center;
+}
+
+.number_rooms p {
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    height: 20px;
+    width: 100px;
+    text-align: center;
+}
+
+.number_bathrooms p {
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    height: 20px;
+    width: 100px;
     text-align: center;
 }
 
